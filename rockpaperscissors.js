@@ -20,8 +20,7 @@ Check if player has rock and computer has scissors, return WIN
 Check if player has rock and computer has paper, return LOSS
 */
 
-const playerSelection = prompt("Choose rock, paper, or scissors.");
-const computerSelection = getComputerChoice();
+
 
 
 function singleRound(playerSelection, computerSelection) {
@@ -46,30 +45,61 @@ function singleRound(playerSelection, computerSelection) {
             return 'You lose! Scissors loses to rock'}
         else return 'Draw! Both chose rock!'
     }
+    else return 'Invalid move! You lose that turn!'
 }
 
 // Function that checks result for a win
 function winStatus(result) {
     return (result.includes("win"));
+
 }
 
 // Function that checks for a win +1 to count
 
+let wins = 0;
+
 function winCount(winStatus) {
     if (winStatus === true) {
         return ++wins
-    } else return wins;
+    } else return wins
 }
 
-let wins = 0
-console.log(wins);
-console.log(singleRound(playerSelection, computerSelection))
-console.log(winCount(winStatus(singleRound(playerSelection, computerSelection))));
+function victory(wins) {
+    if (wins >=3) {
+        return 'You win the round overall!'
+    }else return 'You lose the round overall!'
+}
 
-// console.log(singleRound(playerSelection, computerSelection));
-// console.log(winCount(singleRound(playerSelection, computerSelection)));
-console.log(wins)
+//function that runs ONE game and returns result and win count
+function playRound() {
+    let playerSelection = prompt("Choose rock, paper, or scissors.");
+    let computerSelection = getComputerChoice();
+    console.log(singleRound(playerSelection, computerSelection));
+    console.log(winCount(winStatus(singleRound(playerSelection, computerSelection))));
+}
+
+function game() {
+    for (let step = 0; step < 5; step++) {
+        playRound()
+    }
+}
+
+function fiveRoundGame() {
+    game();
+    console.log(victory())
+}
+
+fiveRoundGame();
+
+
+
+
 /* Game function
-Run a single round of the game and check if it results in a win
-If single game is a win, add 1 to a counter and replay the game
-Run the game until */
+ let wins = 0
+ run a singleround
+ console log singleround
+ console log winCount
+ 
+ run that 5 times until it has been run 5 times
+ after the 5th time, check if wins >=3, console log You Win, else Lose
+*/
