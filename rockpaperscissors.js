@@ -48,11 +48,28 @@ function singleRound(playerSelection, computerSelection) {
     }
 }
 
-
-function winCount(result) {
+// Function that checks result for a win
+function winStatus(result) {
     return (result.includes("win"));
 }
 
-console.log(singleRound(playerSelection, computerSelection));
-console.log(winCount(singleRound(playerSelection, computerSelection)));
+// Function that checks for a win +1 to count
 
+function winCount(winStatus) {
+    if (winStatus === true) {
+        return ++wins
+    } else return wins;
+}
+
+let wins = 0
+console.log(wins);
+console.log(singleRound(playerSelection, computerSelection))
+console.log(winCount(winStatus(singleRound(playerSelection, computerSelection))));
+
+// console.log(singleRound(playerSelection, computerSelection));
+// console.log(winCount(singleRound(playerSelection, computerSelection)));
+console.log(wins)
+/* Game function
+Run a single round of the game and check if it results in a win
+If single game is a win, add 1 to a counter and replay the game
+Run the game until */
