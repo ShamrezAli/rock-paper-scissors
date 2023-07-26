@@ -22,7 +22,6 @@ Check if player has rock and computer has paper, return LOSS
 
 const playerSelection = prompt("Choose rock, paper, or scissors.");
 const computerSelection = getComputerChoice();
-console.log(singleRound(playerSelection, computerSelection));
 
 
 function singleRound(playerSelection, computerSelection) {
@@ -48,4 +47,12 @@ function singleRound(playerSelection, computerSelection) {
         else return 'Draw! Both chose rock!'
     }
 }
+
+
+function winCount(result) {
+    return (result.includes("win"));
+}
+
+console.log(singleRound(playerSelection, computerSelection));
+console.log(winCount(singleRound(playerSelection, computerSelection)));
 
