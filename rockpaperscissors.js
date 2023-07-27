@@ -20,9 +20,6 @@ Check if player has rock and computer has scissors, return WIN
 Check if player has rock and computer has paper, return LOSS
 */
 
-
-
-
 function singleRound(playerSelection, computerSelection) {
     if (playerSelection.toLowerCase() === 'rock') {
         if (computerSelection === 'scissors') {
@@ -48,19 +45,21 @@ function singleRound(playerSelection, computerSelection) {
     else return 'Invalid move! You lose that turn!'
 }
 
-// Function that checks result for a win
+// function that checks result for a win
+
 function winStatus(result) {
     return (result.includes("win"));
 
 }
 
-//function that checks results for a draw, adds one round to the game
+// function that checks results for a draw, adds one round to the game
+
 function drawStatus(result) {
     return (result.includes("Draw"));
 
 }
 
-// Function that checks for a win +1 to count
+// function that checks for a win, then +1 to count
 
 let wins = 0;
 
@@ -70,18 +69,21 @@ function winCount(winStatus) {
     } else return wins
 }
 
+// function that counts the wins and reports a victory or defeat
 
 function victory(winCount) {
-    if (wins >= 3) {
+    if (wins >= 2) {
         return 'You win the round overall!'
     }else return 'You lose the round overall!'
 }
 
-//function that runs ONE game and returns result and win count
+// function that runs ONE game and returns result and win count
+
 function playRound() {
     let playerSelection = prompt("Choose rock, paper, or scissors.");
     let computerSelection = getComputerChoice();
     console.log(singleRound(playerSelection, computerSelection));
+    console.log("Your current win count is:")
     console.log(winCount(winStatus(singleRound(playerSelection, computerSelection))));
     if (playerSelection == computerSelection) {
         console.log('Draw means redo the round!')
@@ -90,28 +92,20 @@ function playRound() {
     }
 }
 
+// function that lets the game run 3 times total (unless draw)
+
 function game() {
-    for (let step = 0; step < 5; step++) {
+    for (let step = 0; step < 3; step++) {
         playRound();
     }
 }
 
-function fiveRoundGame(wins) {
+// function that runs a game and displays the victor or loser
+
+function threeRoundGame(wins) {
     game();
     console.log(victory(wins))
 }
 
-fiveRoundGame();
 
-
-
-
-/* Game function
- let wins = 0
- run a singleround
- console log singleround
- console log winCount
- 
- run that 5 times until it has been run 5 times
- after the 5th time, check if wins >=3, console log You Win, else Lose
-*/
+threeRoundGame();
