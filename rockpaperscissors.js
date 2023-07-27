@@ -54,6 +54,12 @@ function winStatus(result) {
 
 }
 
+//function that checks results for a draw, adds one round to the game
+function drawStatus(result) {
+    return (result.includes("Draw"));
+
+}
+
 // Function that checks for a win +1 to count
 
 let wins = 0;
@@ -64,8 +70,9 @@ function winCount(winStatus) {
     } else return wins
 }
 
-function victory(wins) {
-    if (wins >=3) {
+
+function victory(winCount) {
+    if (wins >= 3) {
         return 'You win the round overall!'
     }else return 'You lose the round overall!'
 }
@@ -76,17 +83,22 @@ function playRound() {
     let computerSelection = getComputerChoice();
     console.log(singleRound(playerSelection, computerSelection));
     console.log(winCount(winStatus(singleRound(playerSelection, computerSelection))));
+    if (playerSelection == computerSelection) {
+        console.log('Draw means redo the round!')
+        playRound();
+
+    }
 }
 
 function game() {
     for (let step = 0; step < 5; step++) {
-        playRound()
+        playRound();
     }
 }
 
-function fiveRoundGame() {
+function fiveRoundGame(wins) {
     game();
-    console.log(victory())
+    console.log(victory(wins))
 }
 
 fiveRoundGame();
