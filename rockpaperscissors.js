@@ -43,7 +43,6 @@ function winStatus(result) {
 // Checks results for a draw, adds one round to the game
 function drawStatus(result) {
     return (result.includes("Draw"));
-
 }
 
 let wins = 0;
@@ -75,11 +74,10 @@ function playRound() {
     if (playerSelection == computerSelection) {
         console.log('Draw means redo the round!')
         playRound();
-
     }
 }
 
-// Lets the game run 3 times total (unless draw)
+// Lets the game run 3 times in a row
 function game() {
     for (let step = 0; step < 3; step++) {
         playRound();
