@@ -5,8 +5,7 @@ function getComputerChoice() {
     } else if (Math.random() < (2/3)) {
         return 'paper';
     } else return 'scissors';
-    }
-
+}
 
 // Returns a win/loss message based on player and computer choice
 function singleRound(playerSelection, computerSelection) {
@@ -34,61 +33,72 @@ function singleRound(playerSelection, computerSelection) {
     else return 'Invalid move! You lose that turn!'
 }
 
+let playerWins = 0;
+let computerWins = 0;
+
 // Checks result for a win
-function winStatus(result) {
-    return (result.includes("win"));
-
+function winStatus() {
+    if ((resultText.textContent.includes("win"))) {
+        ++playerWins;
+        playerWinsNumber.textContent = playerWins;
+    }else if ((resultText.textContent.includes("lose"))) {
+        ++computerWins;
+        computerWinsNumber.textContent = computerWins;
+    }else if ((resultText.textContent.includes("Draw"))) {
+        return;
+    }else return;
 }
 
-// Checks results for a draw, adds one round to the game
-function drawStatus(result) {
-    return (result.includes("Draw"));
+function endGame() {
+    if (playerWins >= 3) {
+        finalResultText.textContent = 'Game over! You WIN!'
+    }else if (computerWins >= 3) {
+        finalResultText.textContent = 'Game over! You LOSE!';
+    }else return;
 }
 
-let wins = 0;
-
-// Checks for a win, then +1 to count
-function winCount(winStatus) {
-    if (winStatus === true) {
-        return ++wins
-    } else return wins
+function resetGame() {
+    playerWins = 0;
+    computerWins = 0;
+    alert('hi');
+    return;
 }
 
-// Counts the wins and reports a victory or defeat
-function victory(winCount) {
-    if (wins >= 2) {
-        return 'You win the round overall!'
-    }else return 'You lose the round overall!'
+// Define the three buttons for the DOM
+const rockButton = document.getElementById('rock');
+const paperButton = document.getElementById('paper');
+const scissorsButton = document.getElementById('scissors');
+const resultText = document.getElementById('result');
+const playerWinsText = document.getElementById('playerWins');
+const playerWinsNumber = document.getElementById('playerWinsNumber');
+const computerWinsText = document.getElementById('computerWins');
+const computerWinsNumber = document.getElementById('computerWinsNumber');
+const finalResultText = document.getElementById('finalResultText');
+const resetButton = document.getElementById('resetButton');
+
+rockButton.addEventListener('click', function() {
+    resultText.textContent = singleRound('rock', getComputerChoice());
+    winStatus();
+    endGame();
+}   
+);
+
+paperButton.addEventListener('click', function() {
+    resultText.textContent = singleRound('paper', getComputerChoice());
+    winStatus();
+    endGame();
 }
+);
 
-/* Runs ONE game and returns result and win count.
-   Checks for player and computer making same choice.
-   If same choice, runs the round again.
-*/
-function playRound() {
-    let playerSelection = prompt("Choose rock, paper, or scissors.");
-    let computerSelection = getComputerChoice();
-    console.log(singleRound(playerSelection, computerSelection));
-    console.log("Your current win count is:")
-    console.log(winCount(winStatus(singleRound(playerSelection, computerSelection))));
-    if (playerSelection == computerSelection) {
-        console.log('Draw means redo the round!')
-        playRound();
-    }
+scissorsButton.addEventListener('click', function() {
+    resultText.textContent = singleRound('scissors', getComputerChoice());
+    winStatus();
+    endGame();
 }
+);
 
-// Lets the game run 3 times in a row
-function game() {
-    for (let step = 0; step < 3; step++) {
-        playRound();
-    }
+resetButton.addEventListener('click', function() {
+    resetGame();
 }
+)
 
-// Function that runs a game and displays the victor or loser
-function threeRoundGame(wins) {
-    game();
-    console.log(victory(wins))
-}
-
-
-threeRoundGame();
