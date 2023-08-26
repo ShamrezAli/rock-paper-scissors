@@ -4,11 +4,23 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css" />
   <title>Rock Paper Scissors</title>
-  <script src="rockpaperscissors.js"></script>
+
 </head>
 <body>
-<script>
-</script>
+<div class = "rps-choices" id="rps-options">
+  <button type="button" class = 'rockbtn' id = 'rock' value = "rock" >Rock</button>
+  <button type="button" class = 'paperbtn' id = 'paper' value = "paper" >Paper</button>
+  <button type="button" class = scissorsbtn' id = 'scissors' value = "scissors" ">Scissors</button>
+</div>
+<p type="text" id='result'>Press a button to begin the game!</p>
+<p type="text" id='playerWins'>Player:</p>
+<p type="text" id='playerWinsNumber'>0</p>
+<p type="text" id='computerWins'>Computer:</p>
+<p type="text" id='computerWinsNumber'>0</p>
+<p type="text" id="finalResultText">-</p>
+<button type="button" class = 'resetButton' id = 'resetButton'>Reset</button>
+<script src="rockpaperscissors.js"></script>
 </body>
 </html>
