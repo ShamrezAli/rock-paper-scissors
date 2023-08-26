@@ -52,15 +52,27 @@ function winStatus() {
 function endGame() {
     if (playerWins >= 3) {
         finalResultText.textContent = 'Game over! You WIN!'
+        rockButton.style.visibility = 'hidden';
+        paperButton.style.visibility = 'hidden';
+        scissorsButton.style.visibility = 'hidden';
     }else if (computerWins >= 3) {
         finalResultText.textContent = 'Game over! You LOSE!';
+        rockButton.style.visibility = 'hidden';
+        paperButton.style.visibility = 'hidden';
+        scissorsButton.style.visibility = 'hidden';
     }else return;
 }
 
 function resetGame() {
     playerWins = 0;
     computerWins = 0;
-    alert('hi');
+    playerWinsNumber.textContent = playerWins;
+    computerWinsNumber.textContent = computerWins;
+    finalResultText.textContent = "-";
+    resultText.textContent = "Press a button to begin the game!"
+    rockButton.style.visibility = 'visible';
+    paperButton.style.visibility = 'visible';
+    scissorsButton.style.visibility = 'visible';
     return;
 }
 
