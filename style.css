@@ -1,0 +1,165 @@
+body {
+    background-color: rgb(240, 209, 170);
+}
+
+.rps-choices {
+    display: flex;
+    justify-content: space-around;
+}
+
+.imagesFolder {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 200px;
+  margin: auto;
+  padding: 200px;
+  border:#000;
+
+}
+
+.dot {
+  height: 550px;
+  width: 450px;
+  background-color: aqua;
+  border-radius: 50%;
+  position: absolute;
+  transform: rotate(67deg);
+  text-align: center;
+}
+.image1 {
+  position: relative;
+  margin: auto;
+  max-height: auto;
+  max-width: 70%;
+}
+
+.image2 {
+  position: absolute;
+  top: 200px;
+  left: 140px;
+  height: 550px;
+  width: auto;
+  margin: auto;
+
+}
+
+.image3 {
+  position: absolute;
+  top: 200px;
+  left: 140px;
+  height: 470px;
+  width: auto;
+  margin: auto;
+}
+
+.result {
+    display: flex;
+    justify-content: space-around;
+}
+
+h1 {
+    display:flex;
+    justify-content: center;
+    color: #C47D5B;
+    font-family: 'Righteous', cursive; 
+    font-size: 65px; 
+    font-weight: normal; 
+    line-height: 60px; 
+    margin: 10px 0 20px; 
+    text-shadow: 1px 1px 0 #000;
+    margin: 10px 0 24px;
+    text-align:center;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    letter-spacing:-1px;
+    color:#C47D5B;
+    text-shadow: 1px 1px 0 #7c490b;
+    margin: 10px 0 24px;
+
+
+}
+
+
+.scoreboard {
+    display: flex;
+    justify-content: space-around;
+}
+
+.resetButtonContainer {
+    display: flex;
+    justify-content: center;
+}
+
+/* CSS */
+.funButton {
+  align-items: center;
+  background-color: #e1a385;
+  border: 2px solid #111;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #111;
+  cursor: pointer;
+  display: flex;
+  font-family: Inter,sans-serif;
+  font-size: 16px;
+  height: 48px;
+  justify-content: center;
+  line-height: 24px;
+  max-width: 100%;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.funButton:after {
+  background-color: #111;
+  border-radius: 8px;
+  content: "";
+  display: block;
+  height: 48px;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: -2px;
+  transform: translate(8px, 8px);
+  transition: transform .2s ease-out;
+  z-index: -1;
+}
+
+.funButton:hover:after {
+  transform: translate(0, 0);
+}
+
+.funButton:active {
+  background-color: #ffdeda;
+  outline: 0;
+}
+
+.funButton:hover {
+  outline: 0;
+}
+
+@media (min-width: 768px) {
+  .funButton {
+    padding: 0 40px;
+  }
+}
+
+.finalResultTextContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.resetButton {
+  background-color: #fbe7c5;
+}
+

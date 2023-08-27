@@ -9,18 +9,37 @@
 
 </head>
 <body>
-<div class = "rps-choices" id="rps-options">
-  <button type="button" class = 'rockbtn' id = 'rock' value = "rock" >Rock</button>
-  <button type="button" class = 'paperbtn' id = 'paper' value = "paper" >Paper</button>
-  <button type="button" class = scissorsbtn' id = 'scissors' value = "scissors" ">Scissors</button>
+<h1>Simple Rock Paper Scissors</h1>
+<h2>By Shamrez Ali</h2>
+<div class = 'imagesFolder'>
+  <div class="dot"></div>
+  <img src="stonePic.png" alt='A cartoon rock' class = 'image1' id = 'image1'>
+  <img src="paperPic.png" alt="A cartoon piece of paper" class = 'image2' id = 'image2'>
+  <img src = "scissorPic.png" alt="A cartoon pair of scissors" class = 'image3' id = 'image3'
+  
 </div>
-<p type="text" id='result'>Press a button to begin the game!</p>
-<p type="text" id='playerWins'>Player:</p>
-<p type="text" id='playerWinsNumber'>0</p>
-<p type="text" id='computerWins'>Computer:</p>
-<p type="text" id='computerWinsNumber'>0</p>
+<div class = "rps-choices" id="rps-options">
+  <button type="button" class = 'funButton' id = 'rock' value = "rock" >Rock</button>
+  <button type="button" class = 'funButton' id = 'paper' value = "paper" >Paper</button>
+  <button type="button" class = 'funButton' id = 'scissors' value = "scissors" ">Scissors</button>
+</div>
+<p type="text" id='result' class="result">Press a button to begin the game!</p>
+<div class="scoreboard">  
+  <div>
+    <p type="text" id='playerWins'>Player:</p>
+    <p type="text" id='playerWinsNumber'>0</p>
+  </div>
+  <div>
+    <p type="text" id='computerWins'>Computer:</p>
+    <p type="text" id='computerWinsNumber'>0</p>
+  </div>
+</div>
+<div class = finalResultTextContainer>
 <p type="text" id="finalResultText">-</p>
-<button type="button" class = 'resetButton' id = 'resetButton'>Reset</button>
+</div>
+<div class = resetButtonContainer>
+<button type="button" class = 'funButton resetButton' id = 'resetButton'>Reset</button>
+</div>
 <script src="rockpaperscissors.js"></script>
 </body>
 </html>
