@@ -1,0 +1,202 @@
+body {
+    background-color: rgb(240, 209, 170);
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    display:flex;
+    justify-content: center;
+    color: #C47D5B;
+    font-family: 'Righteous', cursive; 
+    font-size: 65px; 
+    font-weight: normal; 
+    line-height: 60px; 
+    margin: 10px 0 20px; 
+    text-shadow: 0.5px 0.5px 0 #000;
+    margin: 10px 0 24px;
+    text-align:center;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    letter-spacing:-1px;
+    color:#C47D5B;
+    margin: 10px 0 24px;
+}
+
+p {
+  display: flex;
+  justify-content: center;
+  letter-spacing:-1px;
+  color:#C47D5B;
+  font-size: 24px;
+  margin: 10px 0 24px;
+}
+
+img {
+  display: block;
+  height: 100%;
+  width: auto;
+  margin: auto;
+}
+
+.dot {
+  background-color:rgb(237, 200, 154);
+  border-radius: 50%;
+  position: absolute;
+  height: 100%;
+  display: block;
+  width: 100%;
+  margin: auto;
+}
+
+.spacing {
+  height: 40px;
+}
+
+.imagesFolder {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 200px;
+  margin: auto;
+  padding-bottom: 150px;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.image1 {
+  position: relative;
+  height: 170%;
+}
+
+.image2 {
+  position: absolute;
+}
+
+.image3 {
+  position: absolute;
+  height: 90%;
+  left: 5%;
+}
+
+.rps-choices {
+    display: flex;
+    justify-content: space-around;
+}
+
+.result {
+    display: flex;
+    justify-content: space-around;
+}
+
+.bottomHalf {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: -20px;
+
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    margin-bottom: -80px;
+}
+
+.bigNumber{
+  color: #C47D5B;
+  font-family: 'Righteous', cursive; 
+  font-size: 45px; 
+  font-weight: normal; 
+  line-height: 60px; 
+  text-shadow: 0.5px 0.5px 0 #000;
+}
+
+.resetButtonContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+}
+
+/* CSS */
+.funButton {
+  align-items: center;
+  background-color: #e1a385;
+  border: 2px solid #111;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #111;
+  cursor: pointer;
+  display: flex;
+  font-family: Inter,sans-serif;
+  font-size: 16px;
+  height: 48px;
+  justify-content: center;
+  line-height: 24px;
+  max-width: 100%;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.funButton:after {
+  background-color: #111;
+  border-radius: 8px;
+  content: "";
+  display: block;
+  height: 48px;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: -2px;
+  transform: translate(8px, 8px);
+  transition: transform .2s ease-out;
+  z-index: -1;
+}
+
+.funButton:hover:after {
+  transform: translate(0, 0);
+}
+
+.funButton:active {
+  background-color: #ffdeda;
+  outline: 0;
+}
+
+.funButton:hover {
+  outline: 0;
+}
+
+@media (min-width: 768px) {
+  .funButton {
+    padding: 0 40px;
+  }
+}
+
+.finalResultText{
+  color: #C47D5B;
+  font-family: 'Righteous', cursive; 
+  font-size: 35px; 
+  font-weight: normal; 
+  line-height: 60px; 
+  text-shadow: 0.5px 0.5px 0 #000;
+}
+
+.finalResultTextContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.resetButton {
+  background-color: rgb(231, 189, 138);
+}
+
